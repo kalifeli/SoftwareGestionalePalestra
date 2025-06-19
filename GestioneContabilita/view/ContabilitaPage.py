@@ -320,7 +320,7 @@ class ContabilitaPage(ctk.CTkFrame):
         self.sort_state_entrate[chiave] = nuovo_stato
 
         # Recupera dati
-        dati = self.controller.model.get_entrate()
+        dati = self.controller.dao.get_entrate()
 
         # Applica ordinamento
         if nuovo_stato == "asc":
@@ -372,7 +372,7 @@ class ContabilitaPage(ctk.CTkFrame):
         self.sort_state_uscite[chiave] = nuovo_stato
 
         # Recupera dati
-        dati = self.controller.model.get_uscite()
+        dati = self.controller.dao.get_uscite()
 
         # Applica ordinamento
         if nuovo_stato == "asc":

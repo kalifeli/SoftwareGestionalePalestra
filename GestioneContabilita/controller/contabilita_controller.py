@@ -8,7 +8,7 @@ from GestioneContabilita.view.ModificaEntrataPage import ModificaEntrataPage
 class ContabilitaController:
     def __init__(self, view):
         self.view = view
-        self.model = ContabilitaModel(ContabilitaDaoFirebase())
+        self.dao = ContabilitaDaoFirebase()
 
     # --- Entrate ---
     def aggiungi_entrata(self, descrizione, importo, data, tipo_str):
@@ -23,14 +23,13 @@ class ContabilitaController:
             data=data,
             tipo=tipo_enum
         )
-
-        self.model.aggiungi_entrata(nuova_entrata)
+        self.dao.aggiungi_entrata(nuova_entrata)
 
         # Torna alla schermata precedente tramite il callback
         self.view.back_callback()
 
     def visualizza_entrate(self):
-        dati = self.model.get_entrate()
+        dati = self.dao.get_entrate()
         self.view.mostra_entrate(dati, self.apri_modifica_entrata)
 
     def modifica_entrata(self, entrata_id, descrizione, importo, data, tipo_str):
@@ -41,11 +40,10 @@ class ContabilitaController:
             "data": data,
             "tipo": tipo.value
         }
-        self.model.aggiorna_entrata(entrata_id, nuovi_dati)
+        self.dao.aggiorna_entrata(entrata_id, nuovi_dati)
         self.visualizza_entrate()
     
     def apri_modifica_entrata(self, entrata):
-        
 
         if hasattr(self.view, 'pagina_corrente') and self.view.pagina_corrente:
             self.view.pagina_corrente.destroy()
@@ -66,11 +64,11 @@ class ContabilitaController:
             "data": data,
             "tipo": tipo
         }
-        self.model.aggiorna_entrata(entrata_id, nuovi_dati)
+        self.dao.aggiorna_entrata(entrata_id, nuovi_dati)
         self.visualizza_entrate()
 
     def elimina_entrata(self, entrata_id):
-        self.model.elimina_entrata(entrata_id)
+        self.dao.elimina_entrata(entrata_id)
         self.visualizza_entrate()
 
     # --- Uscite ---
@@ -88,12 +86,12 @@ class ContabilitaController:
             tipo=tipo_enum
         )
 
-        self.model.aggiungi_uscita(nuova_uscita)
+        self.dao.aggiungi_uscita(nuova_uscita)
         # Torna alla schermata precedente tramite il callback
         self.view.back_callback()
 
     def visualizza_uscite(self):
-        dati = self.model.get_uscite()
+        dati = self.dao.get_uscite()
         self.view.mostra_uscite(dati, self.apri_modifica_uscita)
 
     def apri_modifica_uscita(self, uscita):
@@ -117,12 +115,9 @@ class ContabilitaController:
             "data": data,
             "tipo": tipo
         }
-        self.model.aggiorna_uscita(uscita_id, nuovi_dati)
+        self.dao.aggiorna_uscita(uscita_id, nuovi_dati)
         self.visualizza_uscite()
 
-    def modifica_uscita(self, uscita_id, descrizione, importo, data, tipo_str):
-        tipo = TipoUscita(tipo_str)
-
     def elimina_uscita(self, uscita_id):
-        self.model.elimina_uscita(uscita_id)
+        self.dao.elimina_uscita(uscita_id)
         self.visualizza_uscite()
