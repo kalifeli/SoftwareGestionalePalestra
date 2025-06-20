@@ -1,5 +1,4 @@
 from GestioneContabilita.daos.ContabilitaDaoFirebase import ContabilitaDaoFirebase
-from GestioneContabilita.model.contabilita_model import ContabilitaModel
 from GestioneContabilita.model.Entrata import Entrata, TipoEntrata
 from GestioneContabilita.model.Uscita import Uscita, TipoUscita
 from GestioneContabilita.view.ModificaUscitaPage import ModificaUscitaPage
