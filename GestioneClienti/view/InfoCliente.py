@@ -19,7 +19,6 @@ class InfoClientePage(ctk.CTkFrame):
 
         self.abbonamenti = self.controller.get_abbonamenti_by_cliente_id(cliente.id) if cliente else []
 
-        # Layout a griglia (2 righe, 1 colonna)
         self.grid_rowconfigure(0, weight=0)  # riga titolo
         self.grid_rowconfigure(1, weight=1)  # riga contenuto
         self.grid_columnconfigure(0, weight=1)
@@ -146,7 +145,7 @@ class InfoClientePage(ctk.CTkFrame):
             master=self.content_frame,
             text="",
             font=ctk.CTkFont(size=14),
-            text_color="#ff5555"  # rosso per gli errori
+            text_color="#ff5555" 
             )
         self.error_label.grid(row=4, column=0, columnspan=2, sticky="ew", padx=10, pady=(5, 0))
 

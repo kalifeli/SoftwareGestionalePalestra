@@ -24,14 +24,10 @@ class ClientiPage(ctk.CTkFrame):
         )
         self.sidebar_frame.grid(row=1, column=0, rowspan=2, sticky="nsew")
 
-        # Layout a griglia (2 righe, 3 colonne)
         self.grid_rowconfigure(0, weight=0)  # riga titolo
         self.grid_rowconfigure(1, weight=1)  # riga contenuto
-        # Colonna 0: sidebar (peso 0, larghezza fissa)
         self.grid_columnconfigure(0, weight=0)
-        # Colonna 1: margine/separatore (peso 0, opzionale)
         self.grid_columnconfigure(1, weight=0, minsize=10)
-        # Colonna 2: contenuto principale (peso 1, si espande)
         self.grid_columnconfigure(2, weight=1)
 
 
@@ -76,12 +72,10 @@ class ClientiPage(ctk.CTkFrame):
             hover_color="#357ab8",
             text_color="#ffffff",
             font=ctk.CTkFont(size=16),
-            command=lambda: self.on_search(self.search_var.get())  # collega la funzione di ricerca
+            command=lambda: self.on_search(self.search_var.get()) 
         )
         self.search_button.grid(row=1, column=1, padx=(0, 10), pady=(20, 10), sticky="ew")
 
-
-        # ── Titolo secondario centrato ──────────────────────────────
         subtitle = ctk.CTkLabel(
             self,
             text="Gestione Clienti",
@@ -134,7 +128,6 @@ class ClientiPage(ctk.CTkFrame):
         for widget in self.scrollable_frame.winfo_children():
             widget.destroy()
 
-        # Aggiunge i clienti come Label nella scrollable_frame usando grid per migliore visualizzazione
         for idx, cliente in enumerate(clienti):
             cliente_label = ctk.CTkLabel(
                 self.scrollable_frame,

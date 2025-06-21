@@ -203,7 +203,7 @@ class AggiungiClientePage(ctk.CTkFrame):
             master=self.content_frame,
             text="",
             font=ctk.CTkFont(size=14),
-            text_color="#ff5555"  # rosso per gli errori
+            text_color="#ff5555" 
             )
         self.error_label.grid(row=9, column=0, columnspan=2, sticky="ew", padx=10, pady=(5, 0))
 

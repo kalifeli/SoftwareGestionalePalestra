@@ -183,10 +183,6 @@ class ModificaClientePage(ctk.CTkFrame):
             font=ctk.CTkFont(size=14),
         )
         self.cert_checkbox.grid(row=7, column=0, columnspan=2, padx=20, pady=(10, 5), sticky="w")
-
-
-
-        # Riservo la riga 7 per spaziatura flessibile
         dati_frame.grid_rowconfigure(7, weight=1)
 
         # Pulsante per salvare le modifiche
@@ -208,7 +204,7 @@ class ModificaClientePage(ctk.CTkFrame):
             master=self.content_frame,
             text="",
             font=ctk.CTkFont(size=14),
-            text_color="#ff5555"  # rosso per gli errori
+            text_color="#ff5555" 
         )
         self.error_label.grid(row=9, column=0, columnspan=2, sticky="ew", padx=10, pady=(5, 0))
 
@@ -217,7 +213,7 @@ class ModificaClientePage(ctk.CTkFrame):
         Gestisce il salvataggio delle modifiche al cliente.
         """
 
-        self.error_label.configure(text="")  # Resetta il messaggio di errore
+        self.error_label.configure(text="") 
 
          # Recupero i dati dalle entry
         nome = self.nome_entry.get() or self.cliente.nome

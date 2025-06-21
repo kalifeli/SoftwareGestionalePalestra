@@ -78,7 +78,7 @@ class EntratePage(ctk.CTkFrame):
 
         # Icona per bottone "Aggiungi"
         self.add_icon = ctk.CTkImage(
-            Image.open("utils/assets/add_cliente.png"),  # puoi cambiarla con "add_entrata.png"
+            Image.open("utils/assets/add_cliente.png"),
             size=(40, 40)
         )
 

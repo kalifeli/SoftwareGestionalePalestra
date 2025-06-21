@@ -19,7 +19,7 @@ class LoginPage(ctk.CTkFrame):
         self.grid_rowconfigure(4, weight=1)  # spazio sotto i bottoni
         self.grid_columnconfigure(0, weight=1)
 
-        # Titolo grande e centrato
+        # Titolo 
         title_label = ctk.CTkLabel(
             self,
             text="Login",

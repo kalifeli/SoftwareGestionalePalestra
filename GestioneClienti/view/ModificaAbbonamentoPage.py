@@ -21,7 +21,6 @@ class ModificaAbbonamentoPage(ctk.CTkFrame):
         )
         self.content_frame.pack(fill="both", expand=True, padx=20, pady=20)
 
-        # Configuro la colonna 0 di content_frame per espandersi
         self.content_frame.grid_columnconfigure(0, weight=1)
 
         # Header (titolo + Indietro) su un'unica riga
@@ -124,7 +123,7 @@ class ModificaAbbonamentoPage(ctk.CTkFrame):
         )
         self.tipo_menu.grid(row=3, column=0, sticky="ew", padx=10, pady=(10, 5))
 
-        # Secondo menu a tendina per mostrare corsi o pacchetti (inizialmente vuoto)
+        # menu a tendina per mostrare corsi o pacchetti
         self.sotto_opzioni_var = ctk.StringVar(value=self.abbonamento.corso if self.abbonamento.corso != "" else self.abbonamento.pacchetto)
         self.sotto_opzioni_menu = ctk.CTkOptionMenu(
             master=form_frame,
@@ -209,7 +208,7 @@ class ModificaAbbonamentoPage(ctk.CTkFrame):
             master=form_frame,
             text="",
             font=ctk.CTkFont(size=14),
-            text_color="#ff5555"  # rosso per gli errori
+            text_color="#ff5555" 
             )
         self.error_label.grid(row=9, column=0, columnspan=2, sticky="ew", padx=10, pady=(5, 0))
 

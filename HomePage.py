@@ -38,7 +38,7 @@ class HomePage(ctk.CTkFrame):
         self.grid_rowconfigure(4, weight=1)  # spazio sotto i bottoni
         self.grid_columnconfigure(0, weight=1)
 
-        # Titolo grande e centrato
+        # Titolo 
         title_label = ctk.CTkLabel(
             self,
             text="Millennum Club",
@@ -47,7 +47,7 @@ class HomePage(ctk.CTkFrame):
         )
         title_label.grid(row=1, column=0, pady=(20, 10), sticky="n")
 
-        # Carico le icone (ridimensiono a 40×40)
+        # Carico le icone 
         self.clienti_icon = ctk.CTkImage(
             Image.open("utils/assets/clienti.png").resize((40, 40)),
             size=(40, 40)

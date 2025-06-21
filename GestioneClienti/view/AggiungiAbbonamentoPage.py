@@ -129,7 +129,7 @@ class AggiungiAbbonamentoPage(ctk.CTkFrame):
         self.sotto_opzioni_menu = ctk.CTkOptionMenu(
             master=form_frame,
             variable=self.sotto_opzioni_var,
-            values=[],  # verrà aggiornato in on_selection_change
+            values=[],  # aggiornato nella funzione on_selection_change
             font=ctk.CTkFont(size=14),
             fg_color="#3a3a4d",
             text_color="#ffffff"

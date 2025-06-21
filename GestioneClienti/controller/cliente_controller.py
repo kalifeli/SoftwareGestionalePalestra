@@ -15,6 +15,10 @@ class ClienteController:
             self.load_clienti()
 
     def load_clienti(self):
+        """
+        Carica tutti i clienti inscritti alla palestra dalla DAO e li visualizza nella view.
+        """
+
         try:
             clienti = self.dao.get_all_clienti()
             print("Clienti caricati:", clienti) 

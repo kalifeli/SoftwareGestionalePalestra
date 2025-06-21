@@ -33,13 +33,11 @@ class OrarioPtPage(ctk.CTkFrame):
         # Layout a griglia (2 righe, 3 colonne)
         self.grid_rowconfigure(0, weight=0)  # riga titolo
         self.grid_rowconfigure(1, weight=1)  # riga contenuto
-        # Colonna 0: sidebar (peso 0, larghezza fissa)
         self.grid_columnconfigure(0, weight=0)
-        # Colonna 1: margine/separatore (peso 0, opzionale)
         self.grid_columnconfigure(1, weight=1)
 
 
-        # ── Bottone "← Indietro" in alto a sinistra ─────────────────
+        # Bottone "Indietro" in alto a sinistra 
         back_button = ctk.CTkButton(
             master=self,
             text="Indietro",
@@ -54,7 +52,6 @@ class OrarioPtPage(ctk.CTkFrame):
         )
         back_button.grid(row=0, column=0, pady=(10, 5), padx=10, sticky="w")
 
-        # ── Titolo secondario centrato ──────────────────────────────
         subtitle = ctk.CTkLabel(
             self,
             text="Orario Personal Trainer",
@@ -74,7 +71,6 @@ class OrarioPtPage(ctk.CTkFrame):
 
         GIORNI_ORDINATI = ["Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato", "Domenica"]
 
-        # Rows ordinati
         idx = 1
         for giorno in GIORNI_ORDINATI:
             orario = self.orario_dict.get(giorno)
@@ -85,7 +81,6 @@ class OrarioPtPage(ctk.CTkFrame):
                 orario_lbl.grid(row=idx, column=1, padx=10, pady=4)
                 idx += 1
 
-        # Optional: make columns expand equally
         table_frame.grid_columnconfigure(0, weight=1)
         table_frame.grid_columnconfigure(1, weight=1)
 

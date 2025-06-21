@@ -14,6 +14,9 @@ class PtController:
             self.load_clienti_associati(view.pt.id)
 
     def get_pt_by_id(self, pt_id: str) -> Optional[PersonalTrainer]:
+        """
+        Recupera il PersonalTrainer attraverso il suo id
+        """
         return self.pt_dao.get_pt_by_id(pt_id)
 
     def aggiorna_clienti_pt(self, pt_id: str) -> bool:
@@ -40,6 +43,9 @@ class PtController:
         return self.pt_dao.get_orario_pt(pt_id)
     
     def get_scheda_cliente(self, cliente_id:str) -> Optional[SchedaCliente]:
+        """
+        Recupera una scheda associata al cliente_id specificato
+        """
         try:
             return self.pt_dao.get_scheda_cliente(cliente_id)
         except:
@@ -47,12 +53,21 @@ class PtController:
             return None
         
     def add_scheda_cliente(self, scheda, cliente_id) -> bool:
+            """
+            Aggiunge una scheda al cliente specificato tramite il suo id
+            """
             return self.pt_dao.add_scheda_cliente(cliente_id, scheda)
     
     def elimina_scheda_cliente(self, scheda_id:str) -> bool:
+        """
+        elimina una scheda di un cliente utilizzando la scheda_id
+        """
         return self.pt_dao.elimina_scheda_cliente(scheda_id)
     
     def update_scheda_cliente(self, scheda: SchedaCliente) -> bool:
+        """
+        aggiorna le informazioni di una scheda cliente
+        """
         return self.pt_dao.update_scheda_cliente(scheda)
 
 
