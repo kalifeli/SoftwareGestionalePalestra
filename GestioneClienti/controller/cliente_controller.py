@@ -85,6 +85,7 @@ class ClienteController:
         """
         try:
             abbonamenti = self.dao.get_abbonamenti_by_cliente_id(cliente_id)
+            print(f"Abbonamenti trovati per il cliente {cliente_id}: {abbonamenti}'.")
             return abbonamenti if abbonamenti else []
         except Exception as e:
             print(f"Errore nel recupero degli abbonamenti: {str(e)}")
