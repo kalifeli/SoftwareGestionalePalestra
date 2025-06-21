@@ -13,11 +13,11 @@ Al suo interno permette di:
 
 ## Caratteristiche principali
 
-- Architettura MVC: separation of concerns tra controller, model e view
-- Pattern Dao: permette la separazione della logica di business e dell'interazione con il database
-- Persistenza in tempo reale su Firebase Firestore
-- Test automatici con unittest e unittest.mock per validare la logica di business
-- Modellazione UML realizzata con Enterprise Architect (diagrammi di classi, componenti, stati…)
+- **Architettura MVC**: separation of concerns tra controller, model e view
+- **Pattern Dao**: permette la separazione della logica di business e dell'interazione con il database
+- **Persistenza** in tempo reale su Firebase Firestore
+- **Test automatici** con unittest e unittest.mock per validare la logica di business
+- **Modellazione UML** realizzata con Enterprise Architect (diagrammi di classi, componenti, stati…)
 
 ## Tecnlogie utilizzate
 - Python 3.9+
