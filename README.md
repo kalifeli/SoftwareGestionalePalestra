@@ -36,6 +36,9 @@ Al suo interno permette di:
   ```
 3. **Installa le dipendenze**
    ```python
-   pip install -r requirements.txt
+   pip install -r utils/requirements.txt
    ```
-4. **Avvia l'applicazione**
+4. **Crea un nuovo progetto Firebase** e scarica dalle impostazioni del progetto le credenziali di autenticazione.
+5. **Inserisci le credenzial**i nella cartella root del progetto
+6. Modifica se necessario la classe utils/firebase_client.py
+7. **Avvia l'applicazione**
