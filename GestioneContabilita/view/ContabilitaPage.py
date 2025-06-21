@@ -2,8 +2,6 @@ import customtkinter as ctk
 from PIL import Image
 from GestioneContabilita.controller.contabilita_controller import ContabilitaController
 from datetime import datetime
-from GestioneContabilita.view.ModificaUscitaPage import ModificaUscitaPage  
-from .ModificaEntrataPage import ModificaEntrataPage
 class ContabilitaPage(ctk.CTkFrame):
     def __init__(self, master, back_callback=None, show_aggiungi_entrata_callback=None, show_aggiungi_uscita_callback=None, show_grafico_contabilita_callback=None):
         super().__init__(master)
@@ -320,7 +318,7 @@ class ContabilitaPage(ctk.CTkFrame):
         self.sort_state_entrate[chiave] = nuovo_stato
 
         # Recupera dati
-        dati = self.controller.dao.get_entrate()
+        dati = self.controller.get_entrate()
 
         # Applica ordinamento
         if nuovo_stato == "asc":
@@ -372,7 +370,7 @@ class ContabilitaPage(ctk.CTkFrame):
         self.sort_state_uscite[chiave] = nuovo_stato
 
         # Recupera dati
-        dati = self.controller.dao.get_uscite()
+        dati = self.controller.get_uscite()
 
         # Applica ordinamento
         if nuovo_stato == "asc":

@@ -54,9 +54,9 @@ class GraficoContabilitaPage(ctk.CTkFrame):
         grafico = self.tipo_grafico.get()
 
         if tipo == "Entrate":
-            dati = self.controller.dao.get_entrate()
+            dati = self.controller.get_entrate()
         else:
-            dati = self.controller.dao.get_uscite()
+            dati = self.controller.get_uscite()
 
         aggregati = defaultdict(float)
         for voce in dati:

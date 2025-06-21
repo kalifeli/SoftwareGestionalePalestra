@@ -27,6 +27,15 @@ class ContabilitaController:
         # Torna alla schermata precedente tramite il callback
         self.view.back_callback()
 
+    def get_entrate(self):
+        try:
+            entrate = self.dao.get_entrate()
+            print(f"Entrate recuperate con successo!")
+            return entrate
+        except Exception as e:
+            print(f"Errore durante il recupero delle entrate")
+            return []
+
     def visualizza_entrate(self):
         dati = self.dao.get_entrate()
         self.view.mostra_entrate(dati, self.apri_modifica_entrata)
@@ -88,6 +97,15 @@ class ContabilitaController:
         self.dao.aggiungi_uscita(nuova_uscita)
         # Torna alla schermata precedente tramite il callback
         self.view.back_callback()
+
+    def get_uscite(self):
+        try:
+            uscite = self.dao.get_uscite()
+            print(f"Uscite recuperate con successo!")
+            return uscite
+        except Exception as e:
+            print(f"Errore durante il recupero delle uscite")
+            return []
 
     def visualizza_uscite(self):
         dati = self.dao.get_uscite()
